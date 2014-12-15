@@ -1,0 +1,77 @@
+<%
+	var securityData = model.get('securityData'),
+		bankData = model.get('bankData'); 
+		 
+%>
+
+
+<%
+
+	if(model.get('registerFinish')){
+%>
+<div class="inner form final">
+	
+	
+		
+	
+	<div class="wrapper">
+
+		<div class="halfCol personal">
+			<div class="legend"><strong>Finalisez votre inscription</strong></div>
+			
+			<p><strong class="purple">Un e-mail vous a été envoyé.<br> Merci de cliquer sous 24H sur le lien qu’il contient</strong> pour valider vos données et utiliser ensuite Kwixo.</p>
+			
+		</div><!-- / .halfCol -->
+		
+		<% 
+		if(model.get('isReceivedMoney') == 1)
+		{
+		%>	
+			
+		<div class="halfCol personal">
+			<p>Vous avez bien reçu le transfert d’argent. <br>
+			L’expéditeur a été prévenu.<br>
+			Vous serez crédité selon les délais habituels de votre banque.</p>
+		</div><!-- / .halfCol -->
+		
+		<%
+		}
+		%>
+		
+		<div class="halfCol secure">
+			<div class="legend"><strong>Récapitulatif de vos données</strong></div>
+			
+			<p><strong>Vos identifiants</strong></p>
+			<div class="data">
+				<span>E-mail :</span> <strong><%= securityData.email %></strong><br />
+				<span>N° de mobile :</span> <strong><%= securityData.mobile %></strong><br />
+			</div>
+			
+			<p><strong>Votre moyen de paiement</strong></p>
+			<div class="data">
+				<span>Carte bancaire :</span> <strong><%= bankData.pan_6 %>xxxxxxx<%= bankData.pan_2 %></strong><br />
+			</div>
+
+		</div><!-- / .halfCol -->
+
+		<div class="buttons">
+			<a href="#home" class="button">Continuer</a>
+		</div><!-- / .buttons -->
+
+		 	<!-- mobile -->
+			<span class="txt-cnt">Kwixo est un établissement de paiement <br /> et s'engage à ne pas communiquer vos données</span>
+
+			<!-- iPad -->
+			<span class="txt-cnt2">Kwixo est un établissement de paiement et s'engage à ne pas communiquer vos données</span>
+		
+	</div><!-- / .fieldset -->
+	
+</div><!-- / .inner -->
+<%
+	}else{
+	%>
+		<div class="inner loading"></div>
+	<%
+	}
+%>
+<img id="xiti" width="1" height="1" src="<%= HOST %>.xiti.com/hit.xitif?s=<%= S %>&s2=6&p=Inscription_recapitulatif::M_TR_INSCRIPTION_RECAP" />

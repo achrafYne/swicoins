@@ -1,0 +1,8 @@
+<%
+	var active = model.get('active');
+%>
+<ul>
+	<% _.each(model.get('buttons'),function(button,i){ %>
+	<li class="<% if(i == active){ %>on <% }; %><%= button.id %>"><a href="<%= button.route %>"><%= button.label %></a><% if(0 != button.badge){  %><span class="badge"><%= button.badge %></span><% }; %></li>
+	<% }); %>
+</ul>
