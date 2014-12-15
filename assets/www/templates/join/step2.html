@@ -1,0 +1,61 @@
+<%
+	/*var securityData = model.get('securityData');*/
+%>
+
+<div class="inner">
+
+	<form class="joinForm form" data-root="securityData" novalidate="novalidate">
+		<p class="sub-title">My credit card 2/3</p>
+		<fieldset>
+			<h2 class="title">Me</h2>
+
+			<div class="halfCol">
+
+				<fieldset>
+					
+					
+					
+					<div class="box-radio">
+						<p>
+							<input type="radio" name="type" id="american-express" placeholder="American Express" required="required" />
+							<label for="american-express">American Express</label>
+						</p>
+
+						<p>
+							<input type="radio" name="type" id="mastercard" placeholder="Mastercard" required="required" />							
+							<label for="mastercard">Mastercard</label>
+						</p>
+
+						<p>
+							<input type="radio" name="type" id="visa" placeholder="Visa" required="required" />							
+							<label for="visa">Visa</label>
+						</p>
+
+					</div>
+					<div class="formline">
+						<input type="text" name="number" id="number" required="required" />						
+						<label for="number" class="oneline">Number</label>
+					</div>
+
+					<div class="formline">
+						<input type="text" name="month" id="month" required="required" />						
+						<label for="month"><span>Expiration date</span> Month/Year</label>
+					</div>
+
+					<div class="formline">
+						<input type="text" name="code" id="code" required="required" />						
+						<label for="code"><span>Back of your card</span> Security code</label>
+					</div>
+				</fieldset>
+
+			</div><!-- halfCol --> 
+
+			<div class="buttons"> 
+				<button type="submit" name="continue" class="continueStep2 ignore btn" value="Next"><span>Next</span></button>
+			</div><!-- / .buttons --> 
+
+		</fieldset>
+
+	</form>
+
+</div><!-- / .inner --> 
